@@ -8,7 +8,7 @@ import ProductDetail from './Component/ProductDetail';
 import GoogleAuthentication from './Component/GoogleAuthentication';
 import { auth } from './firebaseConfig'; 
 import CartPage from './Component/CartPage';
-import { cartReducer } from './cartReducer';
+import { cartReducer } from './Component/cartReducer';
 
 
 export const cartcontext = React.createContext();

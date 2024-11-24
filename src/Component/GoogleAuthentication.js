@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { app } from '../firebaseConfig';
-import { auth,provider } from '../firebaseConfig';
+import {auth, provider} from '../firebaseConfig';
 
 function GoogleAuthentication() {
   const auth = getAuth(app);
