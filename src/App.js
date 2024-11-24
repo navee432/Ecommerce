@@ -2,8 +2,8 @@ import React, { useState, useEffect, useReducer } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'; 
 import './App.css';
 import Usestatesignup from './Component/Usestatesignup';
-import Usestatelogin from './Component/Usestatelgin';
-import Homepage from './Homepage';
+import Usestatelogin from './Component/Usestatelogin';
+import Homepage from './Component/Homepage';
 import ProductDetail from './Component/ProductDetail';
 import GoogleAuthentication from './Component/GoogleAuthentication';
 import { auth } from './firebaseConfig'; 
@@ -47,7 +47,7 @@ function App() {
             <Route path="/Usestatelogin" element={<Usestatelogin />} />
             <Route path="/Homepage" element={<Homepage />} />
             <Route path="/ProductDetail/:id" element={<ProductDetail />} />
-            <Route path='/cartpage' element={<CartPage />} />
+            <Route path='/cartPage' element={<CartPage />} />
           </Routes>
         </BrowserRouter>
       </div>
