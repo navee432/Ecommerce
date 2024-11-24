@@ -2,7 +2,7 @@ import React, { useState, useEffect, useReducer } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'; 
 import './App.css';
 import Usestatesignup from './Component/Usestatesignup';
-import Usestatelogin from './Component/Usestatelogin';
+import Usestatelogin from './Component/Usestatelgin';
 import Homepage from './Homepage';
 import ProductDetail from './Component/ProductDetail';
 import GoogleAuthentication from './Component/GoogleAuthentication';
