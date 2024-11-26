@@ -1,18 +1,29 @@
-import React, { useContext } from 'react';
-import { cartcontext } from '../App';
-import { Button, Card, Row, Col, Container } from 'react-bootstrap';
+import { Button, Card, Col, Row } from "react-bootstrap";
+import Header from "./Header";
+import { useContext } from "react";
+import { cartcontext } from "../App";
 import './CartPage.css';
 
 function CartPage() {
-  const { cart, dispatch } = useContext(cartcontext); // Use cartcontext here
+  const { cart, dispatch } = useContext(cartcontext);
 
-  const removeFromCart = (id) => {
-    dispatch({ type: 'removefromcart', id });
+    // Function to remove a single item from the cart
+    const removeFromCart = (id) => {
+      dispatch({ type: 'removefromcart', id });
+    };
+  
+  
+  // Handler to delete all items
+  const handleDeleteAll = () => {
+    dispatch({ type: 'deleteall' }); // Dispatch delete all action
   };
 
   return (
-    <Container>
-      <h1 className="cart-title">Your Cart</h1>
+    <div>
+    <Header showBack={true} CartTitle={true} onDeleteAll={handleDeleteAll} />
+
+    <div className="bgr">
+    
       {cart.length > 0 ? (
         <Row>
           {cart.map((product) => (
@@ -22,7 +33,7 @@ function CartPage() {
                 <Card.Body>
                   <Card.Title>{product.title}</Card.Title>
                   <Card.Text>Price: ${product.price}</Card.Text>
-                  <Card.Text>Category:{product.category}</Card.Text>
+                  <Card.Text>Category: {product.category}</Card.Text>
                   <Button variant="danger" onClick={() => removeFromCart(product.id)}>
                     Remove from Cart
                   </Button>
@@ -34,7 +45,8 @@ function CartPage() {
       ) : (
         <p className="empty-cart">Your cart is empty.</p>
       )}
-    </Container>
+    </div>
+    </div>
   );
 }
 

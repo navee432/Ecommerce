@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Button, Row, Col, Container } from 'react-bootstrap';
 import { cartcontext } from '../App';
 import './Productdtail.css';
+import Header from './Header';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -28,6 +29,9 @@ function ProductDetail() {
 
   return (
     <div>
+    <Header showBack={true} showTitle={true} showCart={true}/>
+    <div>
+    
       <h1 className='prodtitle'>{product.title}</h1>
       <Row>
         <Col sm={6}>
@@ -44,6 +48,7 @@ function ProductDetail() {
           <Button onClick={() => addtocart(product)} className='addtocart'>Add to Cart</Button>
         </Col>
       </Row>
+    </div>
     </div>
   );
 }
